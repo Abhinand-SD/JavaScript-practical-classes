@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Error Messages</title>
+</head>
+<body>
+
+    <form id="myForm">
+        <input type="text" id="username" placeholder="Enter username">
+        <span id="usernameError" style="color: red;"></span><br><br>
+        <input type="password" id="password" placeholder="Enter password">
+        <span id="passwordError" style="color: red;"></span><br><br>
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+
+            // Clear previous error messages
+            document.getElementById('usernameError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+
+            let isValid = true;
+
+            if (usernameInput === '') {
+                document.getElementById('usernameError').textContent = 'Username is required';
+                isValid = false;
+            }
+
+            if (passwordInput === '') {
+                document.getElementById('passwordError').textContent = 'Password is required';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation Example</title>
+</head>
+
+<body>
+
+    <form>
+        <input type="text" id="username" placeholder="Enter username" />
+        <input type="password" id="password" placeholder="Enter password" />
+        <button onclick="myFunction()" id="submitBtn">Submit</button>
+    </form>
+
+    <script>
+        
+        function myFunction() {
+        const usernameInput = document.getElementById('username').value;
+        const passwordInput = document.getElementById('password').value;
+        
+        
+        // validation function
+       if(usernameInput === '') {
+            alert('Username is required');
+            return;
+        }
+
+        if(passwordInput === '') {
+            alert('Password is required');
+            return;
+        }
+        
+        alert('Form submitted successfully!');
+    }
+    </script>
+</body>
+
+</html>
